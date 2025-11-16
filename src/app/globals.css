@@ -1,0 +1,96 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 56% 91%; /* #F5F5DC - Light Cream */
+    --foreground: 224 71.4% 4.1%; /* A dark color for text for high contrast */
+
+    --card: 60 56% 93%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 60 56% 91%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 126 32% 64%; /* #A7D1AB - Soft Calming Green (adjusted for more vibrancy) */
+    --primary-foreground: 224 71.4% 4.1%;
+
+    --secondary: 122 33% 85%; /* Muted Yellow-Green for some secondary elements */
+    --secondary-foreground: 224 71.4% 4.1%;
+    
+    --muted: 122 33% 88%;
+    --muted-foreground: 225 8.9% 45.1%;
+
+    --accent: 122 33% 85%; /* #C8E6C9 - Muted Yellow-Green */
+    --accent-foreground: 224 71.4% 4.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 126 20% 84%; /* A shade of the primary color */
+    --input: 126 20% 88%;
+    --ring: 126 32% 64%;
+
+    --radius: 0.8rem;
+  }
+
+  .dark {
+    /* For dark mode, let's invert intelligently. A dark greenish gray theme. */
+    --background: 120 10% 10%;
+    --foreground: 60 30% 96.1%;
+
+    --card: 120 10% 12%;
+    --card-foreground: 60 30% 96.1%;
+
+    --popover: 120 10% 10%;
+    --popover-foreground: 60 30% 96.1%;
+
+    --primary: 126 32% 64%;
+    --primary-foreground: 224 71.4% 4.1%;
+
+    --secondary: 122 20% 20%;
+    --secondary-foreground: 60 30% 96.1%;
+
+    --muted: 122 20% 20%;
+    --muted-foreground: 60 30% 96.1%;
+
+    --accent: 122 33% 85%;
+    --accent-foreground: 224 71.4% 4.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 126 20% 30%;
+    --input: 126 20% 30%;
+    --ring: 126 32% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  .pulse-record {
+    animation: pulse-record-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-record-animation {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 1rem hsl(var(--primary) / 0);
+    }
+  }
+}
