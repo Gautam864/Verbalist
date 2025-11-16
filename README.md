@@ -23,6 +23,7 @@ Verbalist is a voice-to-list application designed to simplify task management an
 ## Getting Started
 
 1. Clone the repository.
-2. Install dependencies using `npm install`.
-3. Start the development server with `npm run dev`.
+2. Enter your Gemini API Key (Available for free)
+3. Install dependencies using `npm install`.
+4. Start the development server with `npm run dev`.
 
